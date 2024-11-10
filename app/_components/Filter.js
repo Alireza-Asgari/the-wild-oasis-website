@@ -12,7 +12,6 @@ function Filter() {
     const params = new URLSearchParams(searchParams);
     params.set("capacity", filter);
     router.replace(`${pathName}?${params.toString()}`, { scroll: false });
-    console.log(activeFilter);
   }
   return (
     <div className="border border-primary-800 flex">
