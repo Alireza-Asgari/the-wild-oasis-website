@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 function TextExpander({ children }) {
-  console.log(children.split(" ").length);
   const [isExpanded, setIsExpanded] = useState(false);
   const displayText =
     isExpanded || children.split(" ").length < 20
