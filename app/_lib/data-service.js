@@ -1,6 +1,7 @@
 import { eachDayOfInterval } from "date-fns";
 import { notFound } from "next/navigation";
 import { supabase } from "./supabase";
+import { Calligraffitti } from "next/font/google";
 
 /////////////
 // GET
@@ -155,7 +156,11 @@ export async function getCountries() {
 // CREATE
 
 export async function createGuest(newGuest) {
-  const { data, error } = await supabase.from("guests").insert([newGuest]);
+  console.log(newGuest);
+  const { data, error } = await supabase
+    .from("guests")
+    .insert([newGuest])
+    .select();
 
   if (error) {
     console.error(error);
