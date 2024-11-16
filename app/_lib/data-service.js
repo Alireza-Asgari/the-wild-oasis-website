@@ -95,8 +95,6 @@ export async function getBookings(guestId) {
 }
 
 export async function getBookedDatesByCabinId(cabinId) {
-  // await new Promise((res) => setTimeout(res, 1000));
-
   let today = new Date();
   today.setUTCHours(0, 0, 0, 0);
   today = today.toISOString();
