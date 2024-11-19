@@ -13,7 +13,6 @@ export async function updateGuest(formData) {
   if (!/^[a-zA-Z0-9]{6,12}$/.test(nationalID))
     throw new Error("Please provide a valid nationalID");
   const updateData = { nationality, countryFlag, nationalID };
-  console.log(updateData);
 
   const { data, error } = await supabase
     .from("guests")
@@ -42,8 +41,6 @@ export async function createBooking(bookingData, formData) {
     hasBreakfast: false,
     status: "unconfirmed",
   };
-
-  console.log(newBooking);
 
   const { error } = await supabase
     .from("bookings")
